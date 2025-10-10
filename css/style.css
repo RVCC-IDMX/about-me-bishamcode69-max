@@ -1,0 +1,34 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Text:ital@0;1&family=Markazi+Text:wght@400..700&family=Platypi:ital,wght@0,300..800;1,300..800&display=swap');
+
+body{
+    background-color: #8C6C5A;
+    color:#0A0D0A;
+    font-family: Platypi;
+}
+
+h1, h2, h3, h4, h5, h6{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 30pt;
+}
+header{
+    text-align: center;
+}
+
+#hero, footer{
+    border: 3px solid #1E2620;
+    background-color: #594438;
+    font-weight: bold;
+    text-align: center;
+    padding: 10px;
+
+}
+#hero img{
+    width: 350px;
+}
+#bio{
+    text-align: center;
+}
+#achievements{
+    text-align: center;
+    font-weight: bold;
+}
