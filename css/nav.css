@@ -1,0 +1,101 @@
+/* =========================================
+   NAVBAR BASE STYLES (Mobile First)
+   ========================================= */
+
+/* Navbar Container */
+.navbar {
+    display: flex;
+    flex-direction: column; /* Stack vertically on mobile */
+    align-items: center;
+    background-color: #594438; /* Matches your site background */
+    padding: 15px;
+    border-bottom: 3px solid #1E2620; /* Matches your borders */
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/* Logo Section */
+.logo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.logo img {
+    height: 60px;
+    width: auto;
+}
+
+.logo h1 {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 2rem;
+    margin: 10px 0 0 0;
+    color: #F8F8FF;
+}
+
+/* Navbar Links Container */
+.navbar-links {
+    width: 100%;
+}
+
+.navbar-links ul {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column; /* Stack links */
+    align-items: center;
+    gap: 15px;
+}
+
+.navbar-links li {
+    list-style: none;
+}
+
+.navbar-links a {
+    text-decoration: none;
+    color: #F8F8FF;
+    font-family: 'Platypi', sans-serif;
+    font-size: 1.2rem;
+    font-weight: bold;
+    display: block;
+    transition: color 0.3s ease;
+}
+
+/* Hover Effect */
+.navbar-links a:hover {
+    color: #1E2620; /* Dark green/black hover */
+    text-decoration: underline;
+}
+
+/* =========================================
+   MEDIA QUERY (Wide Screen / Desktop)
+   Matches your existing 60em breakpoint
+   ========================================= */
+
+@media screen and (min-width: 60em) {
+    .navbar {
+        flex-direction: row; /* Horizontal layout */
+        justify-content: space-between; /* Logo left, Links right */
+        padding: 10px 50px;
+    }
+
+    .logo {
+        flex-direction: row; /* Logo side-by-side */
+        gap: 15px;
+        margin-bottom: 0;
+    }
+
+    .logo h1 {
+        margin: 0;
+    }
+
+    .navbar-links {
+        width: auto;
+    }
+
+    .navbar-links ul {
+        flex-direction: row; /* Links side-by-side */
+        gap: 30px;
+    }
+}
