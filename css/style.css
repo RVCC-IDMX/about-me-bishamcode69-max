@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=DM+Serif+Text:ital@0;1&family=Markazi+Text:wght@400..700&family=Platypi:ital,wght@0,300..800;1,300..800&display=swap');
 
 /*----------------------------------------------------------------------*/
-/* BASE STYLES (MOBILE-FIRST)                                           */
+/* BASE STYLES                                                          */
 /*----------------------------------------------------------------------*/
 
 body{
@@ -46,6 +46,8 @@ main {
     width: 350px;
     max-width: 100%;
     height: auto;
+    border-radius: 50%; /* Make profile pic circular */
+    border: 4px solid #F8F8FF;
 }
 
 #bio{
@@ -62,6 +64,7 @@ main {
     color: #1E2620;
 }
 
+
 /* ---------------------------------------------------- */
 /* HOBBIES LIST STYLES                                  */
 /* ---------------------------------------------------- */
@@ -70,41 +73,35 @@ main {
     padding: 20px;
     text-align: center;
     margin-bottom: 20px;
-    background-color: #A68E7D;
+    background-color: #594438;
     border: 1px solid #1E2620;
     border-radius: 8px;
-    
-    /* Center section content using Flexbox */
+    color: #F8F8FF;
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
-#hobbies-list h2 {
-    margin-top: 5px;
-    margin-bottom: 15px;
-}
-
 .hobby-list-style {
     list-style: none;
     padding: 0;
-    max-width: 500px;
+    max-width: 600px;
     margin: 0 auto;
 }
 
 .hobby-list-style li {
-    background-color: #8C6C5A;
-    padding: 10px;
-    margin-bottom: 8px;
+    background-color: #A68E7D;
+    padding: 15px;
+    margin-bottom: 12px;
     border-radius: 4px;
     border-left: 5px solid #1E2620;
-    color: #F8F8FF;
+    color: #1E2620;
     text-align: left;
 }
 
 
 /* ---------------------------------------------------- */
-/* PHOTO GALLERY (MOBILE-FIRST)                         */
+/* PHOTO GALLERY (With Hover Effect)                    */
 /* ---------------------------------------------------- */
 
 #photo-gallery {
@@ -134,13 +131,20 @@ main {
     border: 2px solid #1E2620;
     border-radius: 8px;
     display: block;
+    overflow: hidden; /* Important for zoom effect */
 }
 
+/* HOVER EFFECT: Zoom Image */
 .gallery-grid img {
     width: 100%;
     height: auto;
     display: block;
     border-radius: 4px;
+    transition: transform 0.4s ease;
+}
+
+.gallery-grid figure:hover img {
+    transform: scale(1.05); /* Slight zoom on hover */
 }
 
 figcaption {
@@ -152,7 +156,7 @@ figcaption {
 
 
 /* ---------------------------------------------------- */
-/* ARTICLE CONTENT & DROP CAPS                          */
+/* ARTICLE CONTENT                                      */
 /* ---------------------------------------------------- */
 
 #article-section {
@@ -182,7 +186,6 @@ figcaption {
     text-align: justify;
 }
 
-/* Drop Cap Style (first paragraph only) */
 .article-content p:first-child::first-letter {
     float: left;
     margin-right: 5px;
@@ -199,64 +202,15 @@ figcaption {
     color: #F8F8FF;
 }
 
-
 /* ---------------------------------------------------- */
-/* SECTION 4: VIDEO EMBED STYLING (ASSIGNMENT 3)        */
-/* ---------------------------------------------------- */
-
-.video-section {
-    padding: 30px 20px;
-    text-align: center;
-    margin-bottom: 20px;
-    background-color: #A68E7D;
-    border-radius: 8px;
-    border: 1px solid #1E2620;
-}
-
-.video-section h2 {
-    color: #1E2620;
-    font-size: 24pt;
-    margin-bottom: 20px;
-}
-
-.video-container {
-    /* Center the video block on the page */
-    max-width: 900px;
-    margin: 0 auto 15px auto;
-    
-    /* Step 3: Use aspect-ratio for responsiveness (16:9) */
-    aspect-ratio: 16 / 9;
-    width: 100%;
-    
-    /* Styling for the container */
-    border: 5px solid #594438;
-    border-radius: 4px;
-    overflow: hidden;
-}
-
-.video-container iframe {
-    /* Force iframe to fill 100% of the responsive container */
-    width: 100%;
-    height: 100%;
-    border: none;
-}
-
-.video-caption {
-    font-style: italic;
-    color: #1E2620;
-    font-size: 1em;
-}
-
-
-/* ---------------------------------------------------- */
-/* CSS ANIMATION DEMO (Step 3 Requirement)              */
+/* ANIMATION DEMO                                       */
 /* ---------------------------------------------------- */
 
 .animation-demo-container {
-    background-color: #A68E7D; /* Lighter brown for contrast */
-    border: 2px dashed #1E2620; /* Dark border */
+    background-color: #A68E7D; 
+    border: 2px dashed #1E2620; 
     border-radius: 8px;
-    height: 200px; /* Space for the ball to bounce */
+    height: 200px;
     position: relative;
     margin: 20px auto;
     max-width: 400px;
@@ -268,34 +222,21 @@ figcaption {
 .bouncing-ball {
     width: 50px;
     height: 50px;
-    background-color: #F8F8FF; /* White ball */
-    border-radius: 50%; /* Makes it a perfect circle */
+    background-color: #F8F8FF;
+    border-radius: 50%;
     border: 2px solid #1E2620;
-    
-    /* THE ANIMATION MAGIC */
     position: absolute;
     top: 0;
     animation-name: bounce;
     animation-duration: 2s;
     animation-iteration-count: infinite;
-    animation-timing-function: ease-in; /* Starts slow, gets fast (gravity) */
+    animation-timing-function: ease-in;
 }
 
-/* Define the Keyframes (The Storyboard) */
 @keyframes bounce {
-    0% {
-        top: 0;
-        animation-timing-function: ease-in;
-    }
-    50% {
-        top: 150px; /* Hits the floor */
-        animation-timing-function: ease-out; /* Bounces up, slowing down */
-        transform: scaleY(0.9); /* Squish slightly on impact */
-    }
-    100% {
-        top: 0;
-        animation-timing-function: ease-in;
-    }
+    0% { top: 0; animation-timing-function: ease-in; }
+    50% { top: 150px; animation-timing-function: ease-out; transform: scaleY(0.9); }
+    100% { top: 0; animation-timing-function: ease-in; }
 }
 
 .caption {
@@ -306,23 +247,15 @@ figcaption {
 }
 
 
-/*----------------------------------------------------------------------*/
-/* MEDIA QUERIES (RESPONSIVE BREAKPOINTS)                               */
-/*----------------------------------------------------------------------*/
-
-
 /* ---------------------------------------------------- */
-/* TABLET SIZE BREAKPOINT (min-width: 60em / 960px)     */
+/* MEDIA QUERIES                                        */
 /* ---------------------------------------------------- */
 
 @media screen and (min-width: 60em) {
-
     .gallery-grid {
         flex-direction: column;
         max-width: 1000px;
     }
-
-    /* Gallery Grid (2:1 ratio for image and caption) */
     .gallery-grid figure {
         display: grid;
         grid-template-columns: 2fr 1fr;
@@ -330,63 +263,43 @@ figcaption {
         gap: 20px;
         padding: 15px;
     }
-    
     .gallery-grid img {
         margin-bottom: 0;
         grid-column: 1 / 2;
     }
-
     figcaption {
         grid-column: 2 / 3;
         font-size: 1.5rem;
         padding: 0;
     }
-    
-    /* Multi-Columns for Literature Section */
     .article-content {
         columns: 40rem;
         max-width: 100%;
     }
 }
 
-
-/* ---------------------------------------------------- */
-/* LAPTOP SIZE BREAKPOINT (min-width: 100em)            */
-/* ---------------------------------------------------- */
-
 @media screen and (min-width: 100em) {
-
-    /* Gallery Layout (3-Column Grid) */
     #photo-gallery {
         display: grid;
         grid-template-columns: 1fr 1fr 1fr;
         gap: 30px;
     }
-    
-    /* H2 title spans all three columns */
     #photo-gallery h2 {
         grid-column: 1 / -1;
     }
-
-    /* Remove the horizontal divider line */
     .gallery-divider {
         display: none;
     }
-
     .gallery-grid {
         display: contents;
     }
-
     .gallery-grid figure {
-        /* Reset figure display for image-over-caption layout */
         display: block;
         grid-template-columns: none;
         padding: 15px;
         grid-column: auto / span 1;
     }
-
     figcaption {
-        /* Reset font size and remove grid alignment for block layout */
         font-size: 0.9em;
         text-align: center;
         padding-top: 5px;

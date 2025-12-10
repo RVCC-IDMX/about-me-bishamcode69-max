@@ -4,7 +4,9 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>About Me</title>
+        <title>About Me | Bisham</title>
+        
+        <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>💻</text></svg>">
 
         <link href="css/style.css" rel="stylesheet">
         <link href="css/nav.css" rel="stylesheet">
@@ -16,7 +18,7 @@
         <header>
             <nav class="navbar">
                 <div class="logo">
-                    <img src="images/logo-96X96 (1).svg" alt="blue origami logo">
+                    <div class="monogram-logo">BK</div>
                     <h1>Web Dev I</h1>
                 </div>
 
@@ -41,7 +43,7 @@
         <main>
 
             <section id="hero">
-                <img src="images/avataaars.png" alt="Avator pic of me"> 
+                <img src="images/Me.png" alt="Portrait of Bisham Khanal"> 
                 <div>
                 <br>
                 <p class="p1">Bisham Khanal</p>
@@ -52,23 +54,34 @@
 
             <section id="bio">
                 <div>
-                    <p>Hi, I am Bisham Khanal. I am from Nepal. I like playing
-                        around with the computers, doesn't matter if it is
-                        hardware or software.</p>
-                    <p> I am learning html and css these days. I relly like it.
-                        Day 3 of web dev, I learned to deploy my repository into
-                        netlify.
+                    <h2>About Me</h2>
+                    <p>
+                        Namaste! I am Bisham Khanal, a technology enthusiast originally from the beautiful landscapes of Nepal, now studying in New Brunswick, NJ. My journey into the world of computers started not with code, but with hardware. I spent years fascinated by what goes on inside a PC case, building custom rigs, troubleshooting component failures, and obsessing over the latest GPU benchmarks. That curiosity naturally evolved into software development, where I found a new passion for building things that live on the web.
+                    </p>
+                    <p>
+                        Currently, I am diving deep into Front-End Development. While this site is built with foundational HTML and CSS, I have a growing interest in modern frameworks like React and Vite. I love the logic of coding—it feels like solving a complex puzzle where the reward is a functional, beautiful interface. When I am not debugging code or tweaking CSS layouts, I am usually keeping up with the latest tech news or experimenting with new Linux distros.
                     </p>
                 </div>
             </section>
             
             <section id="hobbies-list">
-                <h2>My Hobbies and Interests</h2>
+                <h2>Hobbies & Interests</h2>
+                <p style="color: #F8F8FF; max-width: 600px; margin-bottom: 20px;">
+                    Life isn't just about screens. I try to balance my digital life with offline adventures and creative pursuits.
+                </p>
                 <ul class="hobby-list-style">
-                    <li>Hiking and Trekking (Shivapuri Trail, Nepal)</li>
-                    <li>Software Development and Coding Challenges</li>
-                    <li>PC Hardware Building and Troubleshooting</li>
-                    <li>Reading Sci-Fi and Fantasy</li>
+                    <li>
+                        <strong>Hiking & Trekking:</strong> Back home, I frequently trekked the Shivapuri Trail. There is something meditative about the mountains that clears my mind for the next coding challenge.
+                    </li>
+                    <li>
+                        <strong>Magic Tricks:</strong> I recently bought a deck of cards specifically to learn sleight of hand. It is harder than it looks (the cards keep slipping!), but I enjoy the performance art aspect of it.
+                    </li>
+                    <li>
+                        <strong>Sci-Fi & Decor:</strong> I am a huge fan of the "Stranger Things" aesthetic—80s synth vibes and neon lights. I'm currently trying to style my room to match that theme.
+                    </li>
+                    <li>
+                        <strong>Listening to Stories:</strong> I have a habit of listening to audiobooks and stories while falling asleep; it’s the best way to unwind after a long day of study.
+                    </li>
                 </ul>
             </section>
             
@@ -143,14 +156,6 @@
                 </article>
             </section>
 
-            <section id="myVideo" class="video-section">
-                <h2>Midterm Project Showcase</h2>
-                <div class="video-container">
-                    <iframe width="560" height="315" src="https://www.youtube.com/embed/_N1_xGZrqi4?si=zUy-DGCxEw4d-K6Y" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-                </div>
-                <p class="video-caption">A quick demo showing the responsive gallery and article features.</p>
-            </section>
-
             <section id="contact" class="form-section">
                 <h2>Contact Me</h2>
                 <form name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field">
@@ -170,38 +175,9 @@
                             <input type="email" id="email" name="email" required placeholder="name@example.com">
                         </div>
                         
-                        <div class="form-group phone-input-group">
-                            <label for="phone">Phone (Optional)</label>
-                            <input type="tel" id="phone" name="phone" placeholder="(123) 456-7890">
-                        </div>
-                        
-                        <div class="form-group phone-select-group">
-                            <label for="phone-type">Phone Type (Optional)</label>
-                            <select id="phone-type" name="phone-type">
-                                <option value="">Select Type</option>
-                                <option value="mobile">Mobile</option>
-                                <option value="work">Work</option>
-                                <option value="home">Home</option>
-                            </select>
-                        </div>
-
                         <div class="form-group full-width-field">
                             <label for="message">Message</label>
                             <textarea id="message" name="message" rows="5" placeholder="Leave your message here..."></textarea>
-                        </div>
-                        
-                        <div class="followup-group full-width-field">
-                            <p>Do you want a follow-up?</p>
-                            <ul class="radio-list">
-                                <li>
-                                    <input type="radio" id="followup-yes" name="followup" value="Yes" checked>
-                                    <label for="followup-yes">Yes, please</label>
-                                </li>
-                                <li>
-                                    <input type="radio" id="followup-no" name="followup" value="No">
-                                    <label for="followup-no">No, thanks</label>
-                                </li>
-                            </ul>
                         </div>
                     </fieldset>
 
@@ -219,7 +195,12 @@
         </section>
         
         <footer>
-            ©2025 - Bisham Khanal
+            <p>©2025 - Bisham Khanal</p>
+            <p>
+                <a href="https://github.com/BishamCode69" target="_blank" style="color: #F8F8FF; text-decoration: underline;">
+                    View Source on GitHub
+                </a>
+            </p>
         </footer>
 
     </body>

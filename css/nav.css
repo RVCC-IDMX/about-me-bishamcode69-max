@@ -5,7 +5,7 @@
 /* Navbar Container */
 .navbar {
     display: flex;
-    flex-wrap: wrap; /* Allows items to wrap for the mobile menu */
+    flex-wrap: wrap; 
     align-items: center;
     justify-content: space-between;
     background-color: #594438;
@@ -19,12 +19,22 @@
 .logo {
     display: flex;
     align-items: center;
-    gap: 10px;
+    gap: 15px;
 }
 
-.logo img {
-    height: 50px;
-    width: auto;
+/* NEW: Monogram Logo Style */
+.monogram-logo {
+    background-color: #F8F8FF;
+    color: #594438;
+    font-family: 'Platypi', serif;
+    font-weight: 800;
+    font-size: 1.5rem;
+    padding: 8px 12px;
+    border-radius: 6px;
+    border: 2px solid #1E2620;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .logo h1 {
@@ -38,12 +48,10 @@
    THE HAMBURGER MENU (Checkbox Hack)
    ========================================= */
 
-/* 1. Hide the actual checkbox input */
 .nav-toggle {
     display: none;
 }
 
-/* 2. Style the Hamburger Icon (The 3 lines) */
 .nav-toggle-label {
     display: flex;
     flex-direction: column;
@@ -60,10 +68,10 @@
     transition: all 0.3s;
 }
 
-/* 3. Hide the links by default on Mobile */
+/* Links (Hidden on Mobile by Default) */
 .navbar-links {
     display: none;
-    width: 100%; /* Takes full width when open */
+    width: 100%; 
     margin-top: 15px;
     border-top: 1px solid rgba(255, 255, 255, 0.2);
 }
@@ -95,7 +103,7 @@
     color: #1E2620;
 }
 
-/* 4. THE MAGIC: Show menu when checkbox is checked */
+/* SHOW MENU when checkbox is checked */
 #nav-toggle:checked ~ .navbar-links {
     display: block;
 }
@@ -107,21 +115,19 @@
 
 @media screen and (min-width: 60em) {
     
-    /* Hide the Hamburger Icon on desktop */
     .nav-toggle-label {
         display: none;
     }
 
-    /* Reset the Navbar Links for desktop row layout */
     .navbar-links {
-        display: block !important; /* Force show links */
+        display: block !important; 
         width: auto;
         margin-top: 0;
         border-top: none;
     }
 
     .navbar-links ul {
-        flex-direction: row; /* Horizontal layout */
+        flex-direction: row; 
         padding: 0;
         gap: 30px;
     }
