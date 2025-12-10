@@ -248,6 +248,56 @@ figcaption {
 
 
 /* ---------------------------------------------------- */
+/* NEW: Z-INDEX DEMO (Article 2 - Extra Credit)         */
+/* ---------------------------------------------------- */
+
+.z-index-demo-container {
+    background-color: #A68E7D;
+    height: 200px;
+    max-width: 400px;
+    margin: 20px auto;
+    position: relative; /* Container needs relative */
+    border: 2px dashed #1E2620;
+    border-radius: 8px;
+}
+
+.card {
+    width: 100px;
+    height: 120px;
+    position: absolute; /* Essential for z-index */
+    border: 2px solid #1E2620;
+    border-radius: 8px;
+    padding: 10px;
+    color: #1E2620;
+    font-weight: bold;
+    font-size: 0.9em;
+    box-shadow: 3px 3px 5px rgba(0,0,0,0.3);
+}
+
+.card-red {
+    background-color: #ff6b6b;
+    top: 20px;
+    left: 40px;
+    z-index: 1; /* Lowest */
+}
+
+.card-blue {
+    background-color: #4ecdc4;
+    top: 50px;
+    left: 80px;
+    z-index: 2; /* Middle */
+}
+
+.card-green {
+    background-color: #ffe66d;
+    top: 80px;
+    left: 120px;
+    z-index: 10; /* Highest - sits on top! */
+    transform: scale(1.1); /* Make it pop */
+}
+
+
+/* ---------------------------------------------------- */
 /* MEDIA QUERIES                                        */
 /* ---------------------------------------------------- */
 
