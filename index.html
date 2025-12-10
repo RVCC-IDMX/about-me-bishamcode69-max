@@ -43,7 +43,7 @@
         <main>
 
             <section id="hero">
-                <img src="images/Me.png" alt="Portrait of Bisham Khanal"> 
+                <img src="images/me.jpg" alt="Portrait of Bisham Khanal" onerror="this.src='images/avataaars.png'"> 
                 <div>
                 <br>
                 <p class="p1">Bisham Khanal</p>
@@ -112,17 +112,17 @@
                     <h2>Bringing the Web to Life: An Intro to CSS Animation</h2>
                     <div class="article-content">
                         <p>
-                            In the early days of the web, pages were static. Content sat still, waiting for a user to scroll. Today, however, modern web development relies heavily on motion to guide user attention, provide feedback, and create immersive experiences. One of the most powerful tools for achieving this is <strong>CSS Animation</strong>. Unlike JavaScript, which can be heavy and complex, CSS animations allow developers to animate transitions and movements using simple, declarative code that runs smoothly in the browser.
+                            In the early days of the internet, web pages were essentially digital sheets of paper. Content sat still, waiting for a user to scroll. If you wanted movement, you had to rely on heavy technologies like Adobe Flash or complex JavaScript libraries that often slowed down the computer. Today, however, modern web development relies heavily on motion to guide user attention, provide interactive feedback, and create immersive storytelling experiences. One of the most efficient tools for achieving this is <strong>CSS Animation</strong>. Unlike its predecessors, CSS allows developers to animate transitions and complex movements using simple, declarative code that runs natively in the browser.
                         </p>
 
-                        <h3>What is a Keyframe?</h3>
+                        <h3>Understanding the Core: Keyframes</h3>
                         <p>
-                            The heart of any CSS animation is the <code>@keyframes</code> rule. Think of it like a movie storyboard. You define what the element looks like at the start (0%) and what it looks like at the end (100%). You can even add steps in between. For example, you might tell a button to start blue, turn red halfway through, and turn blue again at the end. The browser does the heavy lifting of calculating the "frames" in between these points to create smooth motion.
+                            The beating heart of any CSS animation is the <code>@keyframes</code> rule. You can think of this like a storyboard for a movie or a cartoon. In a storyboard, an artist defines the key moments of action—start here, end there. In CSS, we do the same. We define what an element looks like at the start (0%) and what it looks like at the end (100%). We can even add specific steps in between, such as 50% or 75%. For example, you might tell a button to start blue, turn red halfway through the animation, and then return to blue at the end. The browser then does the heavy lifting of calculating all the "frames" in between these points (interpolation) to create smooth, fluid motion without the developer needing to write complex math.
                         </p>
 
                         <h3>The Visual Example: The Bouncing Ball</h3>
                         <p>
-                            To demonstrate how properties like <code>transform</code> and <code>animation-timing-function</code> work together, I have created a visual example below. This "Bouncing Ball" uses a custom keyframe animation to simulate gravity.
+                            To demonstrate how properties like <code>transform</code> and <code>animation-timing-function</code> work together, I have coded a visual example below. This "Bouncing Ball" uses a custom keyframe animation to simulate the physics of gravity.
                         </p>
 
                         <div class="animation-demo-container">
@@ -131,17 +131,22 @@
                         </div>
 
                         <p>
-                            In the example above, the ball doesn't just move up and down at a constant speed; that would look robotic. Instead, we use an <code>ease-in</code> timing function when it falls (to simulate speeding up) and an <code>ease-out</code> function when it rises (to simulate slowing down against gravity). This attention to physics makes the web feel more organic.
+                            In the example above, if the ball moved up and down at a constant speed (linear timing), it would look robotic and unnatural. In the real world, gravity accelerates objects as they fall. To mimic this, we use an <code>ease-in</code> timing function when the ball drops (causing it to speed up) and an <code>ease-out</code> timing function when it rises (causing it to slow down as it fights gravity). We also apply a slight <code>scaleY</code> transformation at the bottom (50%) to make the ball "squish" when it hits the floor. This attention to physics makes the web interface feel organic and alive.
                         </p>
 
-                        <h3>Why Use CSS Over JavaScript?</h3>
+                        <h3>Why CSS Over JavaScript?</h3>
                         <p>
-                            Performance is the main reason. CSS animations are often "hardware accelerated," meaning the browser can offload the work to the computer's Graphics Processing Unit (GPU). This results in buttery smooth 60-frames-per-second animations, even on lower-end mobile devices. Additionally, CSS is fault-tolerant; if a browser doesn't understand the animation code, it simply ignores it and shows the static element, ensuring the content is still accessible.
+                            You might wonder why we use CSS for this when JavaScript is a full programming language. The main reason is performance. CSS animations are often "hardware accelerated," meaning the browser can offload the graphical calculations to the computer's Graphics Processing Unit (GPU) rather than the main CPU. This results in buttery smooth 60-frames-per-second animations, even on lower-end mobile devices. JavaScript animations, if not optimized perfectly, can cause "jank" or stuttering because they run on the same thread as the rest of the page logic. Additionally, CSS is fault-tolerant; if a browser doesn't understand the animation code, it simply ignores it and shows the static element, ensuring the content is still accessible to all users.
+                        </p>
+
+                        <h3>Accessibility Considerations</h3>
+                        <p>
+                            While animation is beautiful, it can be harmful to some users. People with vestibular disorders can experience dizziness or nausea from too much movement on screen. A responsible developer should always use the <code>prefers-reduced-motion</code> media query. This allows the website to detect if the user has requested "reduced motion" in their operating system settings and automatically disable or simplify the animations for them.
                         </p>
 
                         <h3>Conclusion</h3>
                         <p>
-                            Mastering CSS animation opens up a world of creativity. Whether it is a subtle hover effect on a navigation link or a complex loading screen, motion brings personality to a project. As I continue my journey in "Web Dev I", I plan to experiment further with combining these animations with user interactions to create truly dynamic interfaces.
+                            Mastering CSS animation opens up a world of creativity. Whether it is a subtle hover effect on a navigation link, a complex loading screen, or a bouncing ball demo, motion brings personality to a project. As I continue my journey in "Web Dev I", I plan to experiment further with combining these animations with user interactions to create truly dynamic interfaces.
                         </p>
 
                         <div class="citations">
