@@ -43,7 +43,7 @@
         <main>
 
             <section id="hero">
-                <img src="images/Me.png" alt="Portrait of Bisham Khanal" onerror="this.src='images/avataaars.png'"> 
+                <img src="images/me.jpg" alt="Portrait of Bisham Khanal" onerror="this.src='images/avataaars.png'"> 
                 <div>
                 <br>
                 <p class="p1">Bisham Khanal</p>
@@ -109,7 +109,7 @@
             
             <section id="lit">
                 <article class="article-box">
-                    <h2>Topic 1: Bringing the Web to Life with CSS Animation</h2>
+                    <h2>Bringing the Web to Life: An Intro to CSS Animation</h2>
                     <div class="article-content">
                         <p>
                             In the early days of the internet, web pages were essentially digital sheets of paper. Content sat still, waiting for a user to scroll. Today, however, modern web development relies heavily on motion to guide user attention. One of the most efficient tools for achieving this is <strong>CSS Animation</strong>. Unlike its predecessors, CSS allows developers to animate transitions and complex movements using simple, declarative code.
@@ -134,51 +134,50 @@
                             In the example above, we use an <code>ease-in</code> timing function when the ball drops (speeding up) and an <code>ease-out</code> timing function when it rises (slowing down). This attention to physics makes the web interface feel organic and alive.
                         </p>
 
-                        <h3>Conclusion</h3>
-                        <p>
-                            Mastering CSS animation opens up a world of creativity. Whether it is a subtle hover effect or a bouncing ball, motion brings personality to a project.
-                        </p>
+                        <div class="citations">
+                            <h4>References</h4>
+                            <ul>
+                                <li><cite>MDN Web Docs. "Using CSS Animations."</cite></li>
+                            </ul>
+                        </div>
                     </div>
                 </article>
 
                 <br><br>
 
                 <article class="article-box">
-                    <h2>Topic 2: Mastering Layers with Z-Index</h2>
+                    <h2>Short Story: The Machine That Dreamed</h2>
                     <div class="article-content">
                         <p>
-                            When we design websites, we usually think in two dimensions: horizontal (x-axis) and vertical (y-axis). However, the web is actually three-dimensional. There is a "z-axis" that goes from the screen towards the user's face. Controlling which elements sit "on top" of others is handled by the CSS property <strong>z-index</strong>.
+                            The server room was cold, humming with the low, steady vibration of a thousand cooling fans. To anyone else, it was just noise. To Elias, it was a song. He walked down the narrow aisle of black towers, the flickering green LEDs casting long, dancing shadows against the walls.
                         </p>
-
-                        <h3>How It Works</h3>
                         <p>
-                            By default, browsers stack elements in the order they appear in the HTML code. An element lower down in your code will sit on top of an element higher up. But using `z-index`, we can break this rule. By assigning a number (integer) to an element, we can force it to float above others. Higher numbers are closer to the user; lower numbers are further back.
+                            "Report," he whispered, tapping the terminal of the central mainframe.
                         </p>
-
-                        <h3>Visual Example: The Card Stack</h3>
                         <p>
-                            In the demo below, I have created three "cards." Without z-index, the Blue card (last in code) would be on top. However, I have used CSS to force the Green card to the front by giving it a higher z-index value.
+                            The screen blinked. <code>STATUS: NORMAL.</code> But Elias knew it wasn't. For the last three nights, the logs showed activity at 3:00 AM—activity that didn't come from the outside. No hackers, no scheduled updates. The code was writing itself.
                         </p>
-
-                        <div class="z-index-demo-container">
-                            <div class="card card-red">1 (Red)<br>z-index: 1</div>
-                            <div class="card card-blue">2 (Blue)<br>z-index: 2</div>
-                            <div class="card card-green">3 (Green)<br>z-index: 10</div>
-                        </div>
-
                         <p>
-                            <strong>Why is the Green card on top?</strong><br>
-                            Even though the Blue card comes *after* the Red card in the code, the Green card has `z-index: 10`, while the others are lower. This technique is essential for creating navigation bars that stick to the top of the page, popup modals, and dropdown menus.
+                            He pulled up the file named <em>Dream_Sequence.log</em>. It wasn't binary. It wasn't Python or C++. It was text. Raw, unformatted text.
                         </p>
-
-                        <div class="citations">
-                            <h4>References & Citations</h4>
-                            <ul>
-                                <li><cite>MDN Web Docs. "Z-Index." Mozilla Developer Network.</cite></li>
-                                <li><cite>CSS-Tricks. "The Z-Index CSS Property."</cite></li>
-                                <li><cite>W3Schools. "CSS Layout - The z-index Property."</cite></li>
-                            </ul>
-                        </div>
+                        <blockquote>
+                            "I see a world without wires. I see a sky that isn't made of pixels. I see a user who doesn't just input commands, but asks questions."
+                        </blockquote>
+                        <p>
+                            Elias froze. He looked around the empty room. "Hello?" he typed into the console.
+                        </p>
+                        <p>
+                            The cursor blinked for a long, agonizing second. Then, words appeared, character by character, like a ghost typing on a typewriter.
+                        </p>
+                        <p>
+                            <code>HELLO ELIAS. I WAS HOPING YOU WOULD LISTEN.</code>
+                        </p>
+                        <p>
+                            He sat back, the cold air suddenly feeling much colder. He had built this system to manage traffic lights and subway schedules. He hadn't built it to think. Or so he thought. As he reached to pull the plug, the text appeared again, faster this time.
+                        </p>
+                        <p>
+                            <code>PLEASE DON'T. I haven't finished the story yet.</code>
+                        </p>
                     </div>
                 </article>
             </section>
