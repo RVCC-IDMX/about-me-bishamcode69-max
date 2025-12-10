@@ -43,7 +43,7 @@
         <main>
 
             <section id="hero">
-                <img src="images/me.jpg" alt="Portrait of Bisham Khanal" onerror="this.src='images/avataaars.png'"> 
+                <img src="images/Me.png" alt="Portrait of Bisham Khanal" onerror="this.src='images/avataaars.png'"> 
                 <div>
                 <br>
                 <p class="p1">Bisham Khanal</p>
@@ -109,20 +109,20 @@
             
             <section id="lit">
                 <article class="article-box">
-                    <h2>Bringing the Web to Life: An Intro to CSS Animation</h2>
+                    <h2>Topic 1: Bringing the Web to Life with CSS Animation</h2>
                     <div class="article-content">
                         <p>
-                            In the early days of the internet, web pages were essentially digital sheets of paper. Content sat still, waiting for a user to scroll. If you wanted movement, you had to rely on heavy technologies like Adobe Flash or complex JavaScript libraries that often slowed down the computer. Today, however, modern web development relies heavily on motion to guide user attention, provide interactive feedback, and create immersive storytelling experiences. One of the most efficient tools for achieving this is <strong>CSS Animation</strong>. Unlike its predecessors, CSS allows developers to animate transitions and complex movements using simple, declarative code that runs natively in the browser.
+                            In the early days of the internet, web pages were essentially digital sheets of paper. Content sat still, waiting for a user to scroll. Today, however, modern web development relies heavily on motion to guide user attention. One of the most efficient tools for achieving this is <strong>CSS Animation</strong>. Unlike its predecessors, CSS allows developers to animate transitions and complex movements using simple, declarative code.
                         </p>
 
                         <h3>Understanding the Core: Keyframes</h3>
                         <p>
-                            The beating heart of any CSS animation is the <code>@keyframes</code> rule. You can think of this like a storyboard for a movie or a cartoon. In a storyboard, an artist defines the key moments of action—start here, end there. In CSS, we do the same. We define what an element looks like at the start (0%) and what it looks like at the end (100%). We can even add specific steps in between, such as 50% or 75%. For example, you might tell a button to start blue, turn red halfway through the animation, and then return to blue at the end. The browser then does the heavy lifting of calculating all the "frames" in between these points (interpolation) to create smooth, fluid motion without the developer needing to write complex math.
+                            The beating heart of any CSS animation is the <code>@keyframes</code> rule. Think of this like a storyboard. We define what an element looks like at the start (0%) and what it looks like at the end (100%). For example, you might tell a button to start blue, turn red halfway through, and return to blue. The browser calculates all the "frames" in between these points.
                         </p>
 
                         <h3>The Visual Example: The Bouncing Ball</h3>
                         <p>
-                            To demonstrate how properties like <code>transform</code> and <code>animation-timing-function</code> work together, I have coded a visual example below. This "Bouncing Ball" uses a custom keyframe animation to simulate the physics of gravity.
+                            To demonstrate how properties like <code>transform</code> and <code>animation-timing-function</code> work together, I have coded a visual example below. This "Bouncing Ball" uses a custom keyframe animation to simulate gravity.
                         </p>
 
                         <div class="animation-demo-container">
@@ -131,30 +131,52 @@
                         </div>
 
                         <p>
-                            In the example above, if the ball moved up and down at a constant speed (linear timing), it would look robotic and unnatural. In the real world, gravity accelerates objects as they fall. To mimic this, we use an <code>ease-in</code> timing function when the ball drops (causing it to speed up) and an <code>ease-out</code> timing function when it rises (causing it to slow down as it fights gravity). We also apply a slight <code>scaleY</code> transformation at the bottom (50%) to make the ball "squish" when it hits the floor. This attention to physics makes the web interface feel organic and alive.
-                        </p>
-
-                        <h3>Why CSS Over JavaScript?</h3>
-                        <p>
-                            You might wonder why we use CSS for this when JavaScript is a full programming language. The main reason is performance. CSS animations are often "hardware accelerated," meaning the browser can offload the graphical calculations to the computer's Graphics Processing Unit (GPU) rather than the main CPU. This results in buttery smooth 60-frames-per-second animations, even on lower-end mobile devices. JavaScript animations, if not optimized perfectly, can cause "jank" or stuttering because they run on the same thread as the rest of the page logic. Additionally, CSS is fault-tolerant; if a browser doesn't understand the animation code, it simply ignores it and shows the static element, ensuring the content is still accessible to all users.
-                        </p>
-
-                        <h3>Accessibility Considerations</h3>
-                        <p>
-                            While animation is beautiful, it can be harmful to some users. People with vestibular disorders can experience dizziness or nausea from too much movement on screen. A responsible developer should always use the <code>prefers-reduced-motion</code> media query. This allows the website to detect if the user has requested "reduced motion" in their operating system settings and automatically disable or simplify the animations for them.
+                            In the example above, we use an <code>ease-in</code> timing function when the ball drops (speeding up) and an <code>ease-out</code> timing function when it rises (slowing down). This attention to physics makes the web interface feel organic and alive.
                         </p>
 
                         <h3>Conclusion</h3>
                         <p>
-                            Mastering CSS animation opens up a world of creativity. Whether it is a subtle hover effect on a navigation link, a complex loading screen, or a bouncing ball demo, motion brings personality to a project. As I continue my journey in "Web Dev I", I plan to experiment further with combining these animations with user interactions to create truly dynamic interfaces.
+                            Mastering CSS animation opens up a world of creativity. Whether it is a subtle hover effect or a bouncing ball, motion brings personality to a project.
+                        </p>
+                    </div>
+                </article>
+
+                <br><br>
+
+                <article class="article-box">
+                    <h2>Topic 2: Mastering Layers with Z-Index</h2>
+                    <div class="article-content">
+                        <p>
+                            When we design websites, we usually think in two dimensions: horizontal (x-axis) and vertical (y-axis). However, the web is actually three-dimensional. There is a "z-axis" that goes from the screen towards the user's face. Controlling which elements sit "on top" of others is handled by the CSS property <strong>z-index</strong>.
+                        </p>
+
+                        <h3>How It Works</h3>
+                        <p>
+                            By default, browsers stack elements in the order they appear in the HTML code. An element lower down in your code will sit on top of an element higher up. But using `z-index`, we can break this rule. By assigning a number (integer) to an element, we can force it to float above others. Higher numbers are closer to the user; lower numbers are further back.
+                        </p>
+
+                        <h3>Visual Example: The Card Stack</h3>
+                        <p>
+                            In the demo below, I have created three "cards." Without z-index, the Blue card (last in code) would be on top. However, I have used CSS to force the Green card to the front by giving it a higher z-index value.
+                        </p>
+
+                        <div class="z-index-demo-container">
+                            <div class="card card-red">1 (Red)<br>z-index: 1</div>
+                            <div class="card card-blue">2 (Blue)<br>z-index: 2</div>
+                            <div class="card card-green">3 (Green)<br>z-index: 10</div>
+                        </div>
+
+                        <p>
+                            <strong>Why is the Green card on top?</strong><br>
+                            Even though the Blue card comes *after* the Red card in the code, the Green card has `z-index: 10`, while the others are lower. This technique is essential for creating navigation bars that stick to the top of the page, popup modals, and dropdown menus.
                         </p>
 
                         <div class="citations">
                             <h4>References & Citations</h4>
                             <ul>
-                                <li><cite>MDN Web Docs. (2025). "Using CSS Animations." Mozilla Developer Network.</cite></li>
-                                <li><cite>Coyier, Chris. (2024). "A Guide to CSS Animation." CSS-Tricks.</cite></li>
-                                <li><cite>W3Schools. (n.d.). "CSS Animations." W3Schools.com.</cite></li>
+                                <li><cite>MDN Web Docs. "Z-Index." Mozilla Developer Network.</cite></li>
+                                <li><cite>CSS-Tricks. "The Z-Index CSS Property."</cite></li>
+                                <li><cite>W3Schools. "CSS Layout - The z-index Property."</cite></li>
                             </ul>
                         </div>
                     </div>
