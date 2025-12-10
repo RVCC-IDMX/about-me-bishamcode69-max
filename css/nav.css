@@ -5,11 +5,12 @@
 /* Navbar Container */
 .navbar {
     display: flex;
-    flex-direction: column; /* Stack vertically on mobile */
+    flex-wrap: wrap; /* Allows items to wrap for the mobile menu */
     align-items: center;
-    background-color: #594438; /* Matches your site background */
+    justify-content: space-between;
+    background-color: #594438;
     padding: 15px;
-    border-bottom: 3px solid #1E2620; /* Matches your borders */
+    border-bottom: 3px solid #1E2620;
     width: 100%;
     box-sizing: border-box;
 }
@@ -17,33 +18,61 @@
 /* Logo Section */
 .logo {
     display: flex;
-    flex-direction: column;
     align-items: center;
-    margin-bottom: 1rem;
+    gap: 10px;
 }
 
 .logo img {
-    height: 60px;
+    height: 50px;
     width: auto;
 }
 
 .logo h1 {
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    font-size: 2rem;
-    margin: 10px 0 0 0;
+    font-size: 1.5rem;
+    margin: 0;
     color: #F8F8FF;
 }
 
-/* Navbar Links Container */
+/* =========================================
+   THE HAMBURGER MENU (Checkbox Hack)
+   ========================================= */
+
+/* 1. Hide the actual checkbox input */
+.nav-toggle {
+    display: none;
+}
+
+/* 2. Style the Hamburger Icon (The 3 lines) */
+.nav-toggle-label {
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+    gap: 5px;
+}
+
+.nav-toggle-label span {
+    display: block;
+    height: 3px;
+    width: 30px;
+    background-color: #F8F8FF;
+    border-radius: 3px;
+    transition: all 0.3s;
+}
+
+/* 3. Hide the links by default on Mobile */
 .navbar-links {
-    width: 100%;
+    display: none;
+    width: 100%; /* Takes full width when open */
+    margin-top: 15px;
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
 }
 
 .navbar-links ul {
     margin: 0;
-    padding: 0;
+    padding: 15px 0 0 0;
     display: flex;
-    flex-direction: column; /* Stack links */
+    flex-direction: column;
     align-items: center;
     gap: 15px;
 }
@@ -62,40 +91,42 @@
     transition: color 0.3s ease;
 }
 
-/* Hover Effect */
 .navbar-links a:hover {
-    color: #1E2620; /* Dark green/black hover */
-    text-decoration: underline;
+    color: #1E2620;
 }
 
+/* 4. THE MAGIC: Show menu when checkbox is checked */
+#nav-toggle:checked ~ .navbar-links {
+    display: block;
+}
+
+
 /* =========================================
-   MEDIA QUERY (Wide Screen / Desktop)
-   Matches your existing 60em breakpoint
+   MEDIA QUERY (Desktop: 60em / 960px)
    ========================================= */
 
 @media screen and (min-width: 60em) {
-    .navbar {
-        flex-direction: row; /* Horizontal layout */
-        justify-content: space-between; /* Logo left, Links right */
-        padding: 10px 50px;
+    
+    /* Hide the Hamburger Icon on desktop */
+    .nav-toggle-label {
+        display: none;
     }
 
-    .logo {
-        flex-direction: row; /* Logo side-by-side */
-        gap: 15px;
-        margin-bottom: 0;
-    }
-
-    .logo h1 {
-        margin: 0;
-    }
-
+    /* Reset the Navbar Links for desktop row layout */
     .navbar-links {
+        display: block !important; /* Force show links */
         width: auto;
+        margin-top: 0;
+        border-top: none;
     }
 
     .navbar-links ul {
-        flex-direction: row; /* Links side-by-side */
+        flex-direction: row; /* Horizontal layout */
+        padding: 0;
         gap: 30px;
+    }
+    
+    .logo h1 {
+        font-size: 2rem;
     }
 }

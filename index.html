@@ -20,6 +20,13 @@
                     <h1>Web Dev I</h1>
                 </div>
 
+                <input type="checkbox" id="nav-toggle" class="nav-toggle">
+                <label for="nav-toggle" class="nav-toggle-label">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </label>
+
                 <div class="navbar-links">
                     <ul>
                         <li><a href="#bio" class="nav-links">Bio</a></li>
@@ -29,7 +36,7 @@
                     </ul>
                 </div>
             </nav>
-            </header>
+        </header>
         
         <main>
 
@@ -89,13 +96,49 @@
             
             <section id="lit">
                 <article class="article-box">
-                    <h2>Blog</h2>
+                    <h2>Bringing the Web to Life: An Intro to CSS Animation</h2>
                     <div class="article-content">
-                        <p>The rabbit-hole went straight on like a tunnel for some way, and then dipped suddenly down, so suddenly that Alice had not a moment to think about stopping herself before she found herself falling down a very deep well. Either the well was very deep, or she fell very slowly, for she had plenty of time as she went down to look about her and to wonder what was going to happen next.</p>
+                        <p>
+                            In the early days of the web, pages were static. Content sat still, waiting for a user to scroll. Today, however, modern web development relies heavily on motion to guide user attention, provide feedback, and create immersive experiences. One of the most powerful tools for achieving this is <strong>CSS Animation</strong>. Unlike JavaScript, which can be heavy and complex, CSS animations allow developers to animate transitions and movements using simple, declarative code that runs smoothly in the browser.
+                        </p>
 
-                        <p>Alice opened the door and found that it led into a small passage, not much larger than a rat-hole: she knelt down and looked along the passage into the loveliest garden you ever saw. How she longed to get out of that dark hall, and wander about among those beds of bright flowers and those cool fountains, but she could not even get her head through the doorway.</p>
+                        <h3>What is a Keyframe?</h3>
+                        <p>
+                            The heart of any CSS animation is the <code>@keyframes</code> rule. Think of it like a movie storyboard. You define what the element looks like at the start (0%) and what it looks like at the end (100%). You can even add steps in between. For example, you might tell a button to start blue, turn red halfway through, and turn blue again at the end. The browser does the heavy lifting of calculating the "frames" in between these points to create smooth motion.
+                        </p>
 
-                        <p>The Caterpillar and Alice looked at each other for some time in silence: at last the Caterpillar took the hookah out of its mouth, and addressed her in a languid, sleepy voice. 'Who are you?' said the Caterpillar. This was not an encouraging opening for a conversation. Alice replied, rather shyly, 'I—I hardly know, sir, just at present—at least I know who I was when I got up this morning, but I think I must have been changed several times since then.'</p>
+                        <h3>The Visual Example: The Bouncing Ball</h3>
+                        <p>
+                            To demonstrate how properties like <code>transform</code> and <code>animation-timing-function</code> work together, I have created a visual example below. This "Bouncing Ball" uses a custom keyframe animation to simulate gravity.
+                        </p>
+
+                        <div class="animation-demo-container">
+                            <div class="bouncing-ball"></div>
+                            <p class="caption">Figure 1: A CSS infinite loop using ease-in and ease-out.</p>
+                        </div>
+
+                        <p>
+                            In the example above, the ball doesn't just move up and down at a constant speed; that would look robotic. Instead, we use an <code>ease-in</code> timing function when it falls (to simulate speeding up) and an <code>ease-out</code> function when it rises (to simulate slowing down against gravity). This attention to physics makes the web feel more organic.
+                        </p>
+
+                        <h3>Why Use CSS Over JavaScript?</h3>
+                        <p>
+                            Performance is the main reason. CSS animations are often "hardware accelerated," meaning the browser can offload the work to the computer's Graphics Processing Unit (GPU). This results in buttery smooth 60-frames-per-second animations, even on lower-end mobile devices. Additionally, CSS is fault-tolerant; if a browser doesn't understand the animation code, it simply ignores it and shows the static element, ensuring the content is still accessible.
+                        </p>
+
+                        <h3>Conclusion</h3>
+                        <p>
+                            Mastering CSS animation opens up a world of creativity. Whether it is a subtle hover effect on a navigation link or a complex loading screen, motion brings personality to a project. As I continue my journey in "Web Dev I", I plan to experiment further with combining these animations with user interactions to create truly dynamic interfaces.
+                        </p>
+
+                        <div class="citations">
+                            <h4>References & Citations</h4>
+                            <ul>
+                                <li><cite>MDN Web Docs. (2025). "Using CSS Animations." Mozilla Developer Network.</cite></li>
+                                <li><cite>Coyier, Chris. (2024). "A Guide to CSS Animation." CSS-Tricks.</cite></li>
+                                <li><cite>W3Schools. (n.d.). "CSS Animations." W3Schools.com.</cite></li>
+                            </ul>
+                        </div>
                     </div>
                 </article>
             </section>

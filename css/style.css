@@ -248,6 +248,64 @@ figcaption {
 }
 
 
+/* ---------------------------------------------------- */
+/* CSS ANIMATION DEMO (Step 3 Requirement)              */
+/* ---------------------------------------------------- */
+
+.animation-demo-container {
+    background-color: #A68E7D; /* Lighter brown for contrast */
+    border: 2px dashed #1E2620; /* Dark border */
+    border-radius: 8px;
+    height: 200px; /* Space for the ball to bounce */
+    position: relative;
+    margin: 20px auto;
+    max-width: 400px;
+    display: flex;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.bouncing-ball {
+    width: 50px;
+    height: 50px;
+    background-color: #F8F8FF; /* White ball */
+    border-radius: 50%; /* Makes it a perfect circle */
+    border: 2px solid #1E2620;
+    
+    /* THE ANIMATION MAGIC */
+    position: absolute;
+    top: 0;
+    animation-name: bounce;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in; /* Starts slow, gets fast (gravity) */
+}
+
+/* Define the Keyframes (The Storyboard) */
+@keyframes bounce {
+    0% {
+        top: 0;
+        animation-timing-function: ease-in;
+    }
+    50% {
+        top: 150px; /* Hits the floor */
+        animation-timing-function: ease-out; /* Bounces up, slowing down */
+        transform: scaleY(0.9); /* Squish slightly on impact */
+    }
+    100% {
+        top: 0;
+        animation-timing-function: ease-in;
+    }
+}
+
+.caption {
+    position: absolute;
+    bottom: 5px;
+    font-size: 0.8em;
+    color: #1E2620;
+}
+
+
 /*----------------------------------------------------------------------*/
 /* MEDIA QUERIES (RESPONSIVE BREAKPOINTS)                               */
 /*----------------------------------------------------------------------*/
